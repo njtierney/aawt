@@ -7,7 +7,7 @@
 ##' @return
 ##' @author Nicholas Tierney
 ##' @export
-aawt_campsite_locations <- function(aawt_tracks) {
+aawt_section_centroids <- function(aawt_tracks) {
 
   aawt_tracks %>% 
     mutate(centroid = st_centroid(geometry),

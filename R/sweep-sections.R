@@ -7,9 +7,9 @@
 ##' @return
 ##' @author Nicholas Tierney
 ##' @export
-sweep_campsites <- function(campsite_locations) {
+sweep_sections <- function(section_centroids) {
 
-  sweep_for_stations(latlon = c(campsite_locations$centroid_lat[1],
-                                campsite_locations$centroid_lon[1]))
+  sweep_for_stations(latlon = c(section_centroids$centroid_lat[1],
+                                section_centroids$centroid_lon[1]))
 
 }
