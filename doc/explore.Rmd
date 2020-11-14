@@ -11,11 +11,29 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r loadd}
 loadd(aawt_trail)
+loadd(oz_map_aawt_states)
 loadd(campsite_locations)
 loadd(campsite_stations)
 loadd(campsite_weather)
 loadd(campsite_weather_summary)
 ```
+
+```{r}
+ggplot() + 
+  geom_sf(data = oz_map_aawt_states) +
+  geom_sf(data = campsite_locations,
+          colour = "red")
+```
+
+```{r}
+
+track_centroid <- st_centroid(st_geometry(aawt_tracks))
+plot(track_centroid)
+plot(aawt_tracks$geometry)
+
+
+```
+
 
 ## Analysis
 

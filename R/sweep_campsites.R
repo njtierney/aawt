@@ -9,6 +9,7 @@
 ##' @export
 sweep_campsites <- function(campsite_locations) {
 
-  NULL
+  sweep_for_stations(latlon = c(campsite_locations$centroid_lat[1],
+                                campsite_locations$centroid_lon[1]))
 
 }
