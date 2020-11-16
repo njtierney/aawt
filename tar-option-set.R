@@ -1,0 +1,19 @@
+tar_option_set(
+  packages = c(
+    "rmarkdown",
+    "tidyverse",
+    "conflicted",
+    "tidyverse",
+    "bomrang",
+    "lubridate",
+    "dotenv",
+    "future",
+    "targets",
+    "tarchetypes",
+    "fs",
+    "sf",
+    "data.table",
+    "rnaturalearth",
+    "rmarkdown"
+  )
+)

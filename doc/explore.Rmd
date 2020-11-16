@@ -9,13 +9,17 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r loadd}
-loadd(aawt_trail)
-loadd(oz_map_aawt_states)
-loadd(campsite_locations)
-loadd(campsite_stations)
-loadd(campsite_weather)
-loadd(campsite_weather_summary)
+```{r tar-load}
+tar_load(aawt_trail)
+tar_load(oz_map_aawt_states)
+tar_load(aawt_tracks)
+tar_load(aawt_track_points)
+tar_load(aawt_waypoints)
+tar_load(section_centroids)
+tar_load(section_stations)
+tar_load(section_weather_raw)
+tar_load(section_weather)
+tar_load(section_weather_summary)
 ```
 
 ```{r}
