@@ -8,7 +8,13 @@
 ##' @author Nicholas Tierney
 ##' @export
 historical_section_weather <- function(section_stations) {
-
-  NULL
+  
+  rain <- get_historical(stationid = section_stations$nearest_station_code[1],
+                         type = c("rain"))
+  temp_min <- get_historical(stationid = section_stations$nearest_station_code[1],
+                         type = c("min"))
+  
+  temp_max <- get_historical(stationid = section_stations$nearest_station_code[1],
+                         type = c("max"))
 
 }

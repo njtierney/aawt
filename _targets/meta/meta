@@ -1,21 +1,26 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|iteration|parent|children|seconds|warnings|error
-aawt_tracks|stem|8ef578e38f7d1dc9|76d72e7e85f22161|9d2ef4ff7e1b0aae|879092402|_targets/objects/aawt_tracks|4efe9579ec467250|d18438ef8726cd64|217652|rds|vector|||0.131||
-aawt_track_points|stem|3948d63a68612d19|213303ea8ead728e|9d2ef4ff7e1b0aae|-592632496|_targets/objects/aawt_track_points|ff92f1145a158b5c|394e6cd0ebd1d735|362378|rds|vector|||1.132||
 report|stem||fa04aa7ac91446a8|dae613e58ac0d0e6|-237041703||||0|file|vector|||0.392||object campsite_locations not found .
-sweep_sections|function|859f3d1cea39bbe8||||||||||||||
+aawt_tracks|stem|8ef578e38f7d1dc9|76d72e7e85f22161|9d2ef4ff7e1b0aae|879092402|_targets/objects/aawt_tracks|6619184508ea8a62|d18438ef8726cd64|217652|rds|vector|||0.131||
+aawt_track_points|stem|3948d63a68612d19|213303ea8ead728e|9d2ef4ff7e1b0aae|-592632496|_targets/objects/aawt_track_points|23cc38b33f9fa842|394e6cd0ebd1d735|362378|rds|vector|||1.132||
+section_centroids|stem|5aa40bb9df90586f|1660b199ca1d37f4|41842bf616e75d13|285815312|_targets/objects/section_centroids|855553c074f0bd18|7113ebfed79841c0|234890|rds|vector|||0.142||
+oz_map_aawt_states|stem|b55e0ea54b171a52|999c9c7a6ac04240|a556c51aff5020a2|-1123405518|_targets/objects/oz_map_aawt_states|f22022063c1d59fd|05231f4ffee0f224|28220|rds|vector|||1.531||
+aawt_waypoints|stem|05bbb1fd5530f129|a783d88f402a3d5b|9d2ef4ff7e1b0aae|1321536063|_targets/objects/aawt_waypoints|1cb2b9454837cfe3|7238b6e86b6ea75f|8842|rds|vector|||0.172||
+section_weather_raw|stem|37f407b1d87d9f7b|9d64136b74104f1e|0dc8972f9cfb57d9|-1245973763|_targets/objects/section_weather_raw|ddfb9f7290bde3a4|032109efdaeb5558|65431|rds|vector|||4.914||
+section_weather|stem||0b49ce54c89922ef|c4bf5775e03e2f93|-343406245||||0|rds|vector|||0.007||could not find function tidy_section_weather .
+aawt_section_centroids|function|eedd007ebbdded86||||||||||||||
+extract_top_site|function|e3e1a863506cc396||||||||||||||
+aawt_section_starts|function|57319865920a443f||||||||||||||
+historical_section_weather|function|467fd0b42c836a4e||||||||||||||
 create_oz_map_states|function|120546175dfb1ffd||||||||||||||
-aawt_section_centroids|function|8b7614bb27b51745||||||||||||||
 add_lat_lon|function|b863d19979115711||||||||||||||
-oz_map_aawt_states|stem|b55e0ea54b171a52|999c9c7a6ac04240|a556c51aff5020a2|-1123405518|_targets/objects/oz_map_aawt_states|4d43472c4ee3b04e|05231f4ffee0f224|28220|rds|vector|||1.531||
-aawt_waypoints|stem|05bbb1fd5530f129|a783d88f402a3d5b|9d2ef4ff7e1b0aae|1321536063|_targets/objects/aawt_waypoints|cd04c1a95b20e7dc|7238b6e86b6ea75f|8842|rds|vector|||0.172||
-section_centroids|stem|d7d52c5df4231743|1660b199ca1d37f4|2918a23842ef31ce|285815312|_targets/objects/section_centroids|59f5e4dd959aafa6|c2ec729150c5c864|218786|rds|vector|||0.121|st_centroid does not give correct centroids for longitudelatitude data .|
-section_stations|stem|e11cfa4e0ed6e9bc|105a3701390204e4|f1fead49d041d3a4|-2121122236|_targets/objects/section_stations|6f677acfdef4787d|8eb0ee18b2b3cea6|43361|rds|vector|||0.028||
-section_weather_raw|stem||9d64136b74104f1e|ea262b0d65436166|-1245973763||||0|rds|vector|||0.006||could not find function historical_section_weather .
-sweep_sections|function|859f3d1cea39bbe8
+sweep_sections|function|919b18fe6af97897||||||||||||||
+add_station_numbers|function|62a541f825630ca9||||||||||||||
+section_stations|stem|e1b31b6101205870|0a16aa7126e908e2|e0a4586d352a4aac|-2121122236|_targets/objects/section_stations|b972aa938e0e430e|eca68da198421e54|2314|rds|vector|||1.24|repeating attributes for all subgeometries for which they may not be constant .|
+extract_top_site|function|e3e1a863506cc396
+aawt_section_starts|function|57319865920a443f
+historical_section_weather|function|467fd0b42c836a4e
 create_oz_map_states|function|120546175dfb1ffd
-aawt_section_centroids|function|8b7614bb27b51745
 add_lat_lon|function|b863d19979115711
-oz_map_aawt_states|stem|b55e0ea54b171a52|999c9c7a6ac04240|a556c51aff5020a2|-1123405518|_targets/objects/oz_map_aawt_states|4d43472c4ee3b04e|05231f4ffee0f224|28220|rds|vector|||1.531||
-aawt_waypoints|stem|05bbb1fd5530f129|a783d88f402a3d5b|9d2ef4ff7e1b0aae|1321536063|_targets/objects/aawt_waypoints|cd04c1a95b20e7dc|7238b6e86b6ea75f|8842|rds|vector|||0.172||
-section_stations|stem|e11cfa4e0ed6e9bc|105a3701390204e4|f1fead49d041d3a4|-2121122236|_targets/objects/section_stations|6f677acfdef4787d|8eb0ee18b2b3cea6|43361|rds|vector|||0.028||
-section_weather_raw|stem||9d64136b74104f1e|ea262b0d65436166|-1245973763||||0|rds|vector|||0.005||could not find function historical_section_weather .
+sweep_sections|function|919b18fe6af97897
+add_station_numbers|function|62a541f825630ca9
+section_stations|stem|e1b31b6101205870|0a16aa7126e908e2|e0a4586d352a4aac|-2121122236|_targets/objects/section_stations|b972aa938e0e430e|eca68da198421e54|2314|rds|vector|||1.24|repeating attributes for all subgeometries for which they may not be constant .|

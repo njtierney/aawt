@@ -7,9 +7,15 @@
 ##' @return
 ##' @author Nicholas Tierney
 ##' @export
-sweep_sections <- function(section_centroids) {
+sweep_sections <- function(lat, lon) {
 
-  sweep_for_stations(latlon = c(section_centroids$centroid_lat[1],
-                                section_centroids$centroid_lon[1]))
+  stations <- pmap_dfr(.l = list(station_lat = lat,
+                                 station_lon = lon),
+                       .f = extract_top_site) %>% 
+    pivot_longer(cols = everything(),
+                 names_to = c("waypoint"),
+                 values_to = c("nearest_station_code"))
+  
+  stations
 
 }

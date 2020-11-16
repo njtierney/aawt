@@ -7,12 +7,16 @@
 ##' @return
 ##' @author Nicholas Tierney
 ##' @export
-aawt_section_centroids <- function(aawt_tracks) {
+aawt_section_starts <- function(aawt_tracks) {
 
   aawt_tracks %>% 
-    mutate(centroid = st_centroid(geometry),
-           centroid_lat = st_coordinates(centroid)[,1],
-           centroid_lon = st_coordinates(centroid)[,2]) 
+    st_cast(to = "POINT") %>% 
+    group_by(name) %>% 
+    slice(1) %>% 
+    ungroup() %>% 
+    select(name, geometry) %>% 
+    mutate(lat = st_coordinates(geometry)[,1],
+           lon = st_coordinates(geometry)[,2])
   
 
 }
