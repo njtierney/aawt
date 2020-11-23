@@ -35,6 +35,8 @@ tar_pipeline(
   tar_target(stations_near_track,
              find_stations_near_track(aawt_tracks,
                                       bom_stations_sf)),
+  tar_target(la_nina_years,
+             get_la_nina_years()),
   tar_target(track_bbox,
              create_track_bbox(aawt_tracks, buffer_dist = 0.5)),
   tar_target(stations_in_track_bbox,
