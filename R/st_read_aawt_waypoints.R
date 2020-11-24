@@ -3,15 +3,14 @@
 ##' .. content for \details{} ..
 ##'
 ##' @title
-##' @param bom_stations
+
 ##' @return
 ##' @author Nicholas Tierney
 ##' @export
-bom_as_sf <- function(bom_stations) {
+st_read_aawt_waypoints <- function() {
 
-  st_as_sf(bom_stations,
-           coords = c("lon", "lat"),
-           crs = 4326) %>% 
+  st_read("data/AAWT.gpx", 
+          layer = "waypoints") %>% 
     st_transform(crs = 3112)
 
 }

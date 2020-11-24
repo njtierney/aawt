@@ -13,3 +13,5 @@ library(sf)
 library(data.table)
 library(rnaturalearth)
 library(rmarkdown)
+
+source("conflicts.R")

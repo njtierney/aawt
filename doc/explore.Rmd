@@ -39,6 +39,159 @@ plot(aawt_tracks$geometry)
 ```
 
 
+```{r}
+tar_load(stations_near_track)
+
+stations_near_track %>% pull(site) %>% head(1)
+
+library(bomrang)
+
+add_date_day <- function(data){
+  mutate(data,
+         date = ISOdate(year = year,
+                        month = month,
+                        day = day)) %>% 
+    select(-year,
+           -month,
+           -day,
+           -product_code,
+           -quality)
+}
+
+
+weather_070339_max <- get_historical(stationid = "070339", 
+                                     type = c("max")) %>% 
+  add_date_day()
+weather_070339_min <- get_historical(stationid = "070339", 
+                                     type = c("min")) %>% 
+  add_date_day()
+weather_070339_rain <- get_historical(stationid = "070339", 
+                                      type = c("rain")) %>% 
+  add_date_day()
+
+station_weather <- weather_070339_max %>% 
+  left_join(weather_070339_min, 
+            by = c("date", "station_number")) %>% 
+  left_join(weather_070339_rain,
+            by = c("date", "station_number")) %>% 
+  select(station_number,
+         date,
+         max_temperature,
+         min_temperature,
+         rainfall,
+         everything()) %>% 
+  mutate(month = month(date),
+         year = year(date),
+         yday = lubridate::yday(date)) %>% 
+  filter(month %in% c(1:2)) %>% 
+  select(-yday.x,
+         -yday.y)
+
+ggplot(station_weather,
+         aes(x = yday,
+             y = max_temperature-10,
+             group = year)) + 
+  geom_line() 
+
+ggplot(station_weather,
+         aes(x = yday,
+             y = min_temperature-10,
+             group = year)) + 
+  geom_line() 
+
+ggplot(station_weather,
+         aes(x = rainfall)) + 
+  geom_histogram() +
+  scale_x_log10()
+
+```
+
+```{r}
+tar_make(oz_map_aawt_states)
+tar_make(aawt_tracks)
+tar_make(bom_stations_sf)
+tar_load(oz_map_aawt_states)
+tar_load(aawt_tracks)
+tar_load(bom_stations_sf)
+
+library(sf)
+library(dplyr)
+library(ggplot2)
+
+bom_stations_subset <- bom_stations_sf %>% 
+  filter(state %in% c("NSW",
+                      "VIC",
+                      "ACT"))
+
+gg_track_states <- ggplot() + 
+  geom_sf(data = oz_map_aawt_states) +
+  geom_sf(data = aawt_tracks,
+          colour = "salmon")
+
+gg_track_states 
+
+#' not sure how to buffer this correctly, as I get an error: 
+#' "st_buffer does not correctly buffer longitude/latitude data"
+#' ideally would create a polygon that surrounded the whole track
+#' by 250Km, but not sure how to do that
+#' then I can find the bom stations within that polygon
+#' while this kind of works, I'm not sure how to intepret the degrees here
+buffered_track_025 <- st_buffer(aawt_tracks, 0.25) %>% st_union()
+
+stations_in_polygon_025 <- st_intersection(bom_stations_subset, 
+                                           buffered_track_025)
+
+gg_track_states +
+  geom_sf(data = stations_in_polygon_025,
+          alpha = 0.5,
+          colour = "forestgreen") +
+  geom_sf(data = buffered_track_025,
+          fill = NA,
+          colour = "orange")
+
+new_buffer_track <- aawt_tracks %>% 
+  st_transform(crs = 3112) %>% 
+  st_buffer(dist = 500) 
+
+st_nearest_feature(bom_stations_subset, aawt_tracks)
+
+bom_nearest_think <- bom_stations_subset %>% 
+  slice(st_nearest_feature(aawt_tracks, bom_stations_subset))
+
+gg_track_states +
+  geom_sf(data = bom_nearest_think)
+
+stations_in_polygon <- st_intersection(st_transform(bom_stations_subset, 
+                                                    crs = 3112), 
+                                       new_buffer_track)
+
+gg_track_states +
+  geom_sf(data = stations_in_polygon_025,
+          alpha = 0.5,
+          colour = "forestgreen") +
+  geom_sf(data = buffered_track_025,
+          fill = NA,
+          colour = "orange")
+
+#' # Another approach
+#' 
+#' Using bbox to get the points around it, but this is too wide, I think.
+bbox_track <- st_bbox(aawt_tracks) %>% 
+  st_as_sfc() %>% 
+  st_buffer(dist = 0.5)
+
+stations_in_bbox <- st_intersection(bom_stations_subset, bbox_track)
+
+gg_track_states +
+  geom_sf(data = bbox_track,
+          fill = NA) + 
+  geom_sf(data = stations_in_bbox,
+          alpha = 0.5)
+
+
+```
+
+
 ## Analysis
 
 ## Reproducibility

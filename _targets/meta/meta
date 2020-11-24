@@ -3,24 +3,40 @@ report|stem||fa04aa7ac91446a8|dae613e58ac0d0e6|-237041703||||0|file|vector|||0.3
 aawt_tracks|stem|8ef578e38f7d1dc9|76d72e7e85f22161|9d2ef4ff7e1b0aae|879092402|_targets/objects/aawt_tracks|6619184508ea8a62|d18438ef8726cd64|217652|rds|vector|||0.131||
 aawt_track_points|stem|3948d63a68612d19|213303ea8ead728e|9d2ef4ff7e1b0aae|-592632496|_targets/objects/aawt_track_points|23cc38b33f9fa842|394e6cd0ebd1d735|362378|rds|vector|||1.132||
 section_centroids|stem|5aa40bb9df90586f|1660b199ca1d37f4|41842bf616e75d13|285815312|_targets/objects/section_centroids|855553c074f0bd18|7113ebfed79841c0|234890|rds|vector|||0.142||
-oz_map_aawt_states|stem|b55e0ea54b171a52|999c9c7a6ac04240|a556c51aff5020a2|-1123405518|_targets/objects/oz_map_aawt_states|f22022063c1d59fd|05231f4ffee0f224|28220|rds|vector|||1.531||
 aawt_waypoints|stem|05bbb1fd5530f129|a783d88f402a3d5b|9d2ef4ff7e1b0aae|1321536063|_targets/objects/aawt_waypoints|1cb2b9454837cfe3|7238b6e86b6ea75f|8842|rds|vector|||0.172||
 section_weather_raw|stem|37f407b1d87d9f7b|9d64136b74104f1e|0dc8972f9cfb57d9|-1245973763|_targets/objects/section_weather_raw|ddfb9f7290bde3a4|032109efdaeb5558|65431|rds|vector|||4.914||
 section_weather|stem||0b49ce54c89922ef|c4bf5775e03e2f93|-343406245||||0|rds|vector|||0.007||could not find function tidy_section_weather .
 aawt_section_centroids|function|eedd007ebbdded86||||||||||||||
+section_stations|stem|e1b31b6101205870|0a16aa7126e908e2|e0a4586d352a4aac|-2121122236|_targets/objects/section_stations|b972aa938e0e430e|eca68da198421e54|2314|rds|vector|||1.24|repeating attributes for all subgeometries for which they may not be constant .|
+oz_map_aawt_states|stem|231e7d3a3a58fdc0|999c9c7a6ac04240|23228fdd0b044bd3|-1123405518|_targets/objects/oz_map_aawt_states|2da3736edcff20ae|8605b44471d312a0|4103|rds|vector|||1.947||
 extract_top_site|function|e3e1a863506cc396||||||||||||||
 aawt_section_starts|function|57319865920a443f||||||||||||||
 historical_section_weather|function|467fd0b42c836a4e||||||||||||||
-create_oz_map_states|function|120546175dfb1ffd||||||||||||||
+create_track_bbox|function|5ad7cff3805f0f0d||||||||||||||
+bom_as_sf|function|886ac5ef449869c7||||||||||||||
+add_track_sections|function|69df17d5f53fb2e6||||||||||||||
+find_stations_near_track|function|64a565ddb089c6ca||||||||||||||
+create_oz_map_states|function|6cc6a1b7a5b93120||||||||||||||
+load_bom_stations|function|2bb678c1fa9f2bbb||||||||||||||
+find_stations_near_track_bbox|function|5311209600b0e333||||||||||||||
 add_lat_lon|function|b863d19979115711||||||||||||||
 sweep_sections|function|919b18fe6af97897||||||||||||||
 add_station_numbers|function|62a541f825630ca9||||||||||||||
-section_stations|stem|e1b31b6101205870|0a16aa7126e908e2|e0a4586d352a4aac|-2121122236|_targets/objects/section_stations|b972aa938e0e430e|eca68da198421e54|2314|rds|vector|||1.24|repeating attributes for all subgeometries for which they may not be constant .|
+bom_stations|stem|e7c26fcbff761391|cae6f280e2079b66|c0b79eb4bd06591e|635463756|_targets/objects/bom_stations|8976259d2c6bb618|e7b55731b3fecc3f|33890|rds|vector|||0.012||
+bom_stations_sf|stem|e84a3f69f52da686|3b171677428f8f26|f6e5af88d9f2dd74|-1285645950|_targets/objects/bom_stations_sf|cdef343afbbd9031|92d476362cf4abd1|36220|rds|vector|||0.032||
 extract_top_site|function|e3e1a863506cc396
 aawt_section_starts|function|57319865920a443f
 historical_section_weather|function|467fd0b42c836a4e
-create_oz_map_states|function|120546175dfb1ffd
+create_track_bbox|function|5ad7cff3805f0f0d
+bom_as_sf|function|886ac5ef449869c7
+add_track_sections|function|69df17d5f53fb2e6
+find_stations_near_track|function|64a565ddb089c6ca
+create_oz_map_states|function|6cc6a1b7a5b93120
+load_bom_stations|function|2bb678c1fa9f2bbb
+find_stations_near_track_bbox|function|5311209600b0e333
 add_lat_lon|function|b863d19979115711
 sweep_sections|function|919b18fe6af97897
 add_station_numbers|function|62a541f825630ca9
-section_stations|stem|e1b31b6101205870|0a16aa7126e908e2|e0a4586d352a4aac|-2121122236|_targets/objects/section_stations|b972aa938e0e430e|eca68da198421e54|2314|rds|vector|||1.24|repeating attributes for all subgeometries for which they may not be constant .|
+bom_stations|stem|e7c26fcbff761391|cae6f280e2079b66|c0b79eb4bd06591e|635463756|_targets/objects/bom_stations|8976259d2c6bb618|e7b55731b3fecc3f|33890|rds|vector|||0.012||
+bom_stations_sf|stem|e84a3f69f52da686|3b171677428f8f26|f6e5af88d9f2dd74|-1285645950|_targets/objects/bom_stations_sf|cdef343afbbd9031|92d476362cf4abd1|36220|rds|vector|||0.032||
+stations_near_track|stem|3a9050bd60b94752|8b1cf971dd7de295|285cb9ade97f237e|1403585430|_targets/objects/stations_near_track|3cbfc31f6713344c|4235d2684195e0e6|1597|rds|vector|||0.666|attribute variables are assumed to be spatially constant throughout all geometries .|

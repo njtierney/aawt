@@ -9,15 +9,9 @@
 ##' @author Nicholas Tierney
 ##' @export
 find_stations_near_track <- function(aawt_tracks,
-                                     bom_stations_sf,
-                                     buffer_distance = 0.25) {
-
-  buffered_track <- st_buffer(aawt_tracks, buffer_distance) %>% st_union()
+                                     bom_stations_sf) {
   
-  stations_in_polygon <- st_intersection(bom_stations_sf, 
-                                         buffered_track)
-  
-  stations_in_polygon
-  
+  bom_stations_sf %>% 
+    slice(st_nearest_feature(aawt_tracks, bom_stations_sf))
 
 }
